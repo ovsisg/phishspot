@@ -3,7 +3,7 @@
 -- The old binary format (correct_answer boolean) is replaced with correct_option
 
 -- Add new columns for multiple choice format
-ALTER TABLE public.questions ADD COLUMN IF NOT EXISTS question_text TEXT DEFAULT 'What makes this email suspicious?';
+ALTER TABLE public.questions ADD COLUMN IF NOT EXISTS question_text TEXT DEFAULT 'What best describes this email?';
 ALTER TABLE public.questions ADD COLUMN IF NOT EXISTS option_a TEXT;
 ALTER TABLE public.questions ADD COLUMN IF NOT EXISTS option_b TEXT;
 ALTER TABLE public.questions ADD COLUMN IF NOT EXISTS option_c TEXT;
