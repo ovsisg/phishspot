@@ -1,0 +1,25 @@
+-- ============================================================
+-- STORAGE BUCKETS - CREATE VIA SUPABASE DASHBOARD UI
+-- ============================================================
+-- NOTE: Storage buckets cannot be created via SQL Editor due to permissions.
+-- You must create these buckets manually in the Supabase Dashboard.
+--
+-- Instructions:
+-- 1. Go to your Supabase project dashboard
+-- 2. Navigate to Storage section in the left sidebar
+-- 3. Click "New bucket" button
+-- 4. Create the following buckets:
+--
+-- BUCKET 1:
+--   Name: phishing-emails
+--   Public: YES (check the "Public bucket" option)
+--
+-- BUCKET 2:
+--   Name: no-phishing-emails
+--   Public: YES (check the "Public bucket" option)
+--
+-- Both buckets should be set as PUBLIC so images can be displayed in the game.
+-- ============================================================
+
+-- This file intentionally left empty for SQL execution
+-- (Buckets created via Dashboard UI as described above)
