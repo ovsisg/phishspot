@@ -1,0 +1,276 @@
+/* Leaderboard Page Styles */
+.leaderboard-container {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  padding: 20px;
+}
+
+.leaderboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.back-to-game-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px 20px;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-to-game-btn:hover {
+  background-color: var(--bg-secondary);
+  transform: translateX(-3px);
+}
+
+.leaderboard-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.leaderboard-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Loading, Error, Empty States */
+.loading-state,
+.error-state,
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.loading-state p,
+.error-state p,
+.empty-state p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-top: 20px;
+}
+
+.retry-btn,
+.play-now-btn {
+  margin-top: 20px;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.retry-btn:hover,
+.play-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Leaderboard Table */
+.leaderboard-table-container {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.leaderboard-table {
+  width: 100%;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 80px 180px 280px 140px 100px;
+  gap: 50px;
+  padding: 20px 25px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-body {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 80px 180px 280px 140px 100px;
+  gap: 50px;
+  padding: 20px 25px;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:hover {
+  background-color: var(--bg-secondary);
+}
+
+.table-row.top-three {
+  background: linear-gradient(90deg, var(--accent-color) 10, transparent);
+  border-left: 4px solid var(--accent-color);
+}
+
+/* Table Columns */
+.col-rank,
+.col-player,
+.col-country,
+.col-score,
+.col-games {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.rank-badge {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.rank-badge.medal {
+  font-size: 28px;
+}
+
+.player-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.country-name {
+  color: var(--text-secondary);
+}
+
+.score-value {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: var(--accent-color);
+}
+
+.games-count {
+  color: var(--text-secondary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .leaderboard-header h1 {
+    font-size: 32px;
+  }
+
+  .leaderboard-subtitle {
+    font-size: 16px;
+  }
+
+  .back-to-game-btn {
+    position: static;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .table-header {
+    grid-template-columns: 60px 1fr 100px 80px;
+    gap: 10px;
+    padding: 15px;
+    font-size: 12px;
+  }
+
+  .table-row {
+    grid-template-columns: 60px 1fr 100px 80px;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .col-games {
+    display: none;
+  }
+
+  .rank-badge {
+    font-size: 16px;
+  }
+
+  .rank-badge.medal {
+    font-size: 22px;
+  }
+
+  .player-name {
+    font-size: 14px;
+  }
+
+  .country-name {
+    font-size: 13px;
+  }
+
+  .score-value {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leaderboard-content {
+    padding: 20px 10px;
+  }
+
+  .leaderboard-header h1 {
+    font-size: 28px;
+  }
+
+  .table-header {
+    grid-template-columns: 50px 1fr 70px;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .table-row {
+    grid-template-columns: 50px 1fr 70px;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .col-country {
+    display: none;
+  }
+
+  .player-name {
+    font-size: 13px;
+  }
+
+  .score-value {
+    font-size: 15px;
+  }
+}
