@@ -33,8 +33,7 @@ export function IdleScreen({
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         You will be shown 10 emails and asked to choose the option that best
-        describes each one from five possible answers. Please play the game once
-        only before continuing to the post-test.
+        describes each one from five possible answers.
       </motion.p>
 
       <motion.div
