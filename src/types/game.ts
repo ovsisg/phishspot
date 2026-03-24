@@ -1,15 +1,13 @@
 import type { Question } from "../lib/supabase";
 
-// Removed 'followup' state - questions now have options built-in
 export type GameState =
   | "idle"
   | "loading"
   | "playing"
   | "answered"
   | "finished"
-  | "registration";
+  | "saveScore";
 
-// No longer need QuestionWithFollowup - use Question directly
 export type GameQuestion = Question;
 
 export interface GameResult {

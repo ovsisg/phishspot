@@ -9,7 +9,7 @@ import { IdleScreen } from "../components/game/IdleScreen";
 import { LoadingScreen } from "../components/game/LoadingScreen";
 import { PlayingScreen } from "../components/game/PlayingScreen";
 import { AnsweredScreen } from "../components/game/AnsweredScreen";
-import { RegistrationScreen } from "../components/game/RegistrationScreen";
+import { SaveScoreScreen } from "../components/game/SaveScoreScreen";
 import { FinishedScreen } from "../components/game/FinishedScreen";
 import type { GameState, GameResult } from "../types/game";
 
@@ -162,7 +162,7 @@ export function Game() {
       timer.startTimer(questions[nextIndex].timer_duration);
     } else {
       updateSession(score, questions, results);
-      setGameState("registration");
+      setGameState("saveScore");
     }
   };
 
@@ -271,8 +271,8 @@ export function Game() {
           />
         )}
 
-        {gameState === "registration" && (
-          <RegistrationScreen
+        {gameState === "saveScore" && (
+          <SaveScoreScreen
             questions={questions}
             results={results}
             score={score}

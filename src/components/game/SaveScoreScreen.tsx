@@ -3,7 +3,7 @@ import { countries } from "../../data/countries";
 import type { Question } from "../../lib/supabase";
 import type { GameResult } from "../../types/game";
 
-interface RegistrationScreenProps {
+interface SaveScoreScreenProps {
   questions: Question[];
   results: GameResult[];
   score: number;
@@ -12,14 +12,14 @@ interface RegistrationScreenProps {
   error: string;
 }
 
-export function RegistrationScreen({
+export function SaveScoreScreen({
   questions,
   results,
   score,
   onRegister,
   onSkip,
   error,
-}: RegistrationScreenProps) {
+}: SaveScoreScreenProps) {
   const [playerName, setPlayerName] = useState("");
   const [playerCountry, setPlayerCountry] = useState("");
 
