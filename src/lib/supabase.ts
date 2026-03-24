@@ -1,10 +1,10 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
+  throw new Error("Missing Supabase environment variables");
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
@@ -17,7 +17,7 @@ export type Profile = {
   phone?: string;
   company?: string;
   additional_info?: string;
-  role: 'admin' | 'player';
+  role: "admin" | "player";
   total_games_played: number;
   best_score: number;
   total_score: number;
@@ -35,30 +35,15 @@ export type Question = {
   option_c: string;
   option_d: string;
   option_e: string;
-  correct_option: 'a' | 'b' | 'c' | 'd' | 'e';
+  correct_option: "a" | "b" | "c" | "d" | "e";
   explanation?: string;
   points: number;
-  difficulty?: 'easy' | 'medium' | 'hard';
+  difficulty?: "easy" | "medium" | "hard";
   timer_duration: number;
   is_active: boolean;
   created_at: string;
   updated_at: string;
   // Legacy fields (kept for backward compatibility)
-  question_type?: 'phishing' | 'no_phishing';
+  question_type?: "phishing" | "no_phishing";
   correct_answer?: boolean;
-};
-
-export type FollowupQuestion = {
-  id: string;
-  question_id: string;
-  followup_text: string;
-  option_a: string;
-  option_b: string;
-  option_c: string;
-  option_d: string;
-  correct_option: 'a' | 'b' | 'c' | 'd';
-  explanation?: string;
-  order_index: number;
-  created_at: string;
-  updated_at: string;
 };

@@ -47,25 +47,24 @@ export function AdminEditQuestion() {
   useEffect(() => {
     if (data) {
       setFormData({
-        questionText:
-          data.question.question_text || "What best describes this email?",
-        optionA: data.question.option_a || "",
-        optionB: data.question.option_b || "",
-        optionC: data.question.option_c || "",
-        optionD: data.question.option_d || "",
-        optionE: data.question.option_e || "",
-        correctOption: data.question.correct_option || "a",
-        explanation: data.question.explanation || "",
-        points: data.question.points,
-        difficulty: data.question.difficulty || "medium",
-        timerDuration: data.question.timer_duration || 40,
+        questionText: data.question_text || "What best describes this email?",
+        optionA: data.option_a || "",
+        optionB: data.option_b || "",
+        optionC: data.option_c || "",
+        optionD: data.option_d || "",
+        optionE: data.option_e || "",
+        correctOption: data.correct_option || "a",
+        explanation: data.explanation || "",
+        points: data.points,
+        difficulty: data.difficulty || "medium",
+        timerDuration: data.timer_duration || 40,
       });
     }
   }, [data]);
 
   const updateMutation = useMutation({
     mutationFn: async (updates: any) => {
-      let imageUrl = data?.question.email_image_url;
+      let imageUrl = data?.email_image_url;
 
       if (imageFile) {
         imageUrl = await uploadImage(imageFile, "email-images");
@@ -187,7 +186,7 @@ export function AdminEditQuestion() {
               <div className="current-image-section">
                 <h3>Current Image</h3>
                 <img
-                  src={data.question.email_image_url}
+                  src={data.email_image_url}
                   alt="Current email"
                   className="current-image-preview"
                 />
