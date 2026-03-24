@@ -890,73 +890,6 @@ h6 {
   padding: 0;
 }
 
-.answer-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.answer-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 20px 40px;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: "Inter", sans-serif;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 220px;
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-}
-
-.answer-btn .btn-icon {
-  font-size: 24px;
-  transition: transform 0.3s ease;
-}
-
-.answer-btn .btn-text {
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
-.phishing-btn {
-  background: var(--bg-card);
-  color: #dc2626;
-  border-color: #fecaca;
-}
-
-.phishing-btn:hover {
-  background: #fef2f2;
-  border-color: #dc2626;
-  box-shadow: var(--shadow-lg);
-}
-
-.phishing-btn:hover .btn-icon {
-  transform: scale(1.2) rotate(-10deg);
-}
-
-.legitimate-btn {
-  background: var(--bg-card);
-  color: #16a34a;
-  border-color: #bbf7d0;
-}
-
-.legitimate-btn:hover {
-  background: #f0fdf4;
-  border-color: #16a34a;
-  box-shadow: var(--shadow-lg);
-}
-
-.legitimate-btn:hover .btn-icon {
-  transform: scale(1.2);
-}
-
 /* Multiple Choice Option Buttons */
 .option-buttons {
   display: flex;
@@ -1204,66 +1137,6 @@ h6 {
 .next-btn:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
-}
-
-.followup-container {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.followup-container h3 {
-  font-size: 20px;
-  color: var(--text-primary);
-  margin-bottom: 15px;
-}
-
-.followup-text {
-  font-size: 18px;
-  color: var(--text-secondary);
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-.followup-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.followup-option {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 16px 20px;
-  background-color: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-align: left;
-}
-
-.followup-option:hover:not(:disabled) {
-  border-color: var(--accent-color);
-}
-
-.followup-option.selected {
-  border-color: var(--accent-color);
-}
-
-.followup-option.correct {
-  border-color: #22c55e;
-  background-color: #22c55e10;
-}
-
-.followup-option.incorrect {
-  border-color: #ef4444;
-  background-color: #ef444410;
-}
-
-.followup-option:disabled {
-  cursor: default;
 }
 
 .option-letter {
@@ -1797,67 +1670,6 @@ h6 {
   /* Points */
   .points-earned {
     font-size: 22px;
-  }
-
-  /* UUID Display - Mobile */
-  .uuid-display-box {
-    padding: 20px 15px;
-  }
-
-  .uuid-header h3 {
-    font-size: 18px;
-  }
-
-  .uuid-icon {
-    font-size: 28px;
-  }
-
-  .uuid-value {
-    font-size: 11px;
-  }
-
-  .copy-uuid-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .uuid-note {
-    font-size: 13px;
-    padding: 12px;
-  }
-
-  /* Player Tabs - Mobile */
-  .player-type-tabs {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .tab-option {
-    padding: 16px;
-  }
-
-  .tab-icon {
-    font-size: 28px;
-  }
-
-  .tab-content h4 {
-    font-size: 15px;
-  }
-
-  .tab-content p {
-    font-size: 12px;
-  }
-
-  .info-box {
-    padding: 15px;
-  }
-
-  .info-box p:first-child {
-    font-size: 15px;
-  }
-
-  .info-box p:last-child {
-    font-size: 13px;
   }
 
   /* Answer Buttons - Very Small Screens */
