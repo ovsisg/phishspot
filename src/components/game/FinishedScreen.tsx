@@ -8,8 +8,6 @@ interface FinishedScreenProps {
   score: number;
   playerId: string | null;
   playerName: string;
-  playerUuid: string;
-  showUuidMessage: boolean;
   onLeaderboard: () => void;
   onPlayAgain: () => void;
   hasPlayedGame?: boolean;
@@ -21,8 +19,6 @@ export function FinishedScreen({
   score,
   playerId,
   playerName,
-  playerUuid,
-  showUuidMessage,
   onLeaderboard,
   onPlayAgain,
   hasPlayedGame,
@@ -44,42 +40,6 @@ export function FinishedScreen({
         <p className="saved-message">
           Thanks, <strong>{playerName}</strong>! Your score has been saved.
         </p>
-      )}
-
-      {showUuidMessage && playerUuid && (
-        <motion.div
-          className="uuid-display-box"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.4 }}
-        >
-          <div className="uuid-header">
-            <span className="uuid-icon">🔑</span>
-            <h3>Save Your Player UUID</h3>
-          </div>
-          <div className="uuid-content">
-            <p className="uuid-label">Your Player UUID:</p>
-            <div className="uuid-value-container">
-              <code className="uuid-value">{playerUuid}</code>
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(playerUuid);
-                  alert("UUID copied to clipboard!");
-                }}
-                className="copy-uuid-btn"
-                title="Copy to clipboard"
-              >
-                📋 Copy
-              </button>
-            </div>
-            <p className="uuid-note">
-              💡 <strong>Important:</strong> Save this UUID! Use it next time
-              you play to link your games and increase your total score. Just
-              paste it when you finish your next game to continue building your
-              stats!
-            </p>
-          </div>
-        </motion.div>
       )}
 
       <div className="final-score">

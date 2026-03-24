@@ -23,8 +23,6 @@ export function Game() {
   });
   const [playerName, setPlayerName] = useState("");
   const [playerId, setPlayerId] = useState<string | null>(null);
-  const [playerUuid, setPlayerUuid] = useState("");
-  const [showUuidMessage, setShowUuidMessage] = useState(false);
 
   const [gameState, setGameState] = useState<GameState>("idle");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -190,43 +188,11 @@ export function Game() {
 
       setPlayerId(playerData.id);
       setPlayerName(name.trim());
-      setPlayerUuid(playerData.id);
-      setShowUuidMessage(true);
 
       await completeSession(playerData.id);
       setGameState("finished");
     } catch (err: any) {
       setError(err.message || "Failed to save your information");
-    }
-  };
-
-  const handleUuidLookup = async (uuid: string) => {
-    if (!uuid.trim()) {
-      setError("Please enter your Player UUID");
-      return;
-    }
-
-    setError("");
-
-    try {
-      const { data: playerData, error: playerError } = await supabase
-        .from("players")
-        .select("*")
-        .eq("id", uuid.trim())
-        .single();
-
-      if (playerError || !playerData) {
-        setError("Player UUID not found. Please check and try again.");
-        return;
-      }
-
-      setPlayerId(playerData.id);
-      setPlayerName(playerData.name);
-
-      await completeSession(playerData.id);
-      setGameState("finished");
-    } catch (err: any) {
-      setError(err.message || "Failed to load player data");
     }
   };
 
@@ -236,8 +202,6 @@ export function Game() {
 
     setPlayerName("");
     setPlayerId(null);
-    setPlayerUuid("");
-    setShowUuidMessage(false);
     setGameState("idle");
   };
 
@@ -313,7 +277,6 @@ export function Game() {
             results={results}
             score={score}
             onRegister={handleRegistration}
-            onUuidLookup={handleUuidLookup}
             onSkip={() => setGameState("finished")}
             error={error}
           />
@@ -326,8 +289,6 @@ export function Game() {
             score={score}
             playerId={playerId}
             playerName={playerName}
-            playerUuid={playerUuid}
-            showUuidMessage={showUuidMessage}
             onLeaderboard={() => navigate("/leaderboard")}
             onPlayAgain={playAgain}
             hasPlayedGame={hasPlayedGame}
